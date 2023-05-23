@@ -1,0 +1,8 @@
+<h2>New Task</h2>
+
+<%# using partial rendering by adding render (refactoring the form thats duplicated in edit.html.erb): %>
+<%= render "form", task: @task %>
+
+<button type="button" class="btn btn-outline-info ml-3 mr-3">
+<%= link_to "Back to all tasks", tasks_path %>
+</button>

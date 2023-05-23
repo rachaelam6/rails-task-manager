@@ -1,0 +1,25 @@
+<h2>All Tasks</h2>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to "Delete",
+                   task_path(task),
+                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </li>
+  <% end %>
+</ul>
+
+<button type="button" class="btn btn-outline-primary ml-3 mr-3">
+<%= link_to "Add a new task", new_task_path %>
+</button>
+
+
+<%# The @task variable needs to be defined for each task within the loop in your index.html.erb file.
+the Delete link is placed within the loop for each task, and the task variable is used to define the correct task_path.
+the confirmation dialog box is added with the data-confirm attribute, which triggers a JavaScript confirmation prompt before deleting the task. %>
+
+<%# The @task variable is not required for the delete link within the loop since it should refer to the current task being iterated.
+By using task instead of @task in the link_to method for the delete link, the correct task_path(task) will be generated for each task in the loop.  %>

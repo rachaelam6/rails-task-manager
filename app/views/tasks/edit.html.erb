@@ -1,0 +1,26 @@
+<h2>Edit task</h2>
+
+<%# using partial rendering by adding render (refactoring the form thats duplicated in new.html.erb): %>
+<%= render "form", task: @task %>
+
+<button type="button" class="btn btn-outline-info ml-3 mr-3">
+<%= link_to "Back to all tasks", tasks_path %>
+</button>
+
+<%# Note: Make sure you have the appropriate form_for or form_with tag in your edit.html.erb
+file to handle the form submission and update the task correctly. %>
+
+
+
+
+<%# <%= link_to "Back to all tasks", tasks_path %>
+
+<%# link_to: This is a Rails helper method for generating a hyperlink.
+
+"Back to all tasks": This is the text that will be displayed for the link.
+
+tasks_path: This is a path helper method provided by Rails. It generates the URL for the index action of the tasks_controller,
+which corresponds to the route -- get "/tasks", to: "tasks#index" -- It represents the URL of the page that lists all tasks.
+
+In summary, the line of code generates a hyperlink with the text "Back to all tasks".
+The tasks_path method generates the URL for the index action of the tasks_controller. %>

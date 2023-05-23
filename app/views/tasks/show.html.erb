@@ -1,0 +1,29 @@
+<h2><%= @task.title %></h2>
+
+<ul>
+  <li class="list-group-item list-group-item-action list-group-item-secondary mt-3 mb-3">Details: <%= @task.details %></li>
+  <li>Completed? <%= @task.completed %></li>
+</ul>
+
+<button type="button" class="btn btn-outline-info ml-3 mr-3">
+<%= link_to "Back to all tasks", tasks_path %>
+</button>
+
+<button type="button" class="btn btn-outline-warning ml-3 mr-3">
+<%= link_to "Edit this task", edit_task_path(@task) %>
+</button>
+<%# By passing @task as an argument to edit_task_path, you provide the necessary id parameter for the route helper method. %>
+
+
+
+
+<%# <%= link_to "Edit this task", edit_task_path(@task) %>
+
+<%# link_to: This is a Rails helper method for generating a hyperlink.
+
+"Edit this task": This is the text that will be displayed for the link.
+
+edit_task_path(@task): This is a path helper method provided by Rails. It generates the URL for the edit action of the tasks_controller,
+which corresponds to the route -- get "/tasks/:id/edit", to: "tasks#edit" -- It represents the URL of the page where the user can edit a specific task.
+
+The @task object is passed as an argument to the edit_task_path method to specify the task to be edited. %>
